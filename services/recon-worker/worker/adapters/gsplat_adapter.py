@@ -1,0 +1,2 @@
+class GSplatAdapter:
+    backend = "gsplat"

@@ -1,0 +1,259 @@
+:root {
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: #f7f7f2;
+  background:
+    radial-gradient(circle at top, rgba(255, 122, 24, 0.28), transparent 30%),
+    linear-gradient(160deg, #0d1722 0%, #10263d 45%, #0f1319 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.layout {
+  padding: 24px;
+}
+
+.hero-panel {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.panel-header,
+.stage-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.panel-header {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.brand-block {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+}
+
+.stage-grid {
+  grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+}
+
+.camera-card,
+.card {
+  background: rgba(10, 16, 24, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+}
+
+.camera-card {
+  min-height: 680px;
+  padding: 18px;
+}
+
+.camera-feed {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  border-radius: 20px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  background: linear-gradient(135deg, rgba(250, 130, 49, 0.18), rgba(79, 172, 254, 0.12));
+}
+
+.camera-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.camera-overlay,
+.detail,
+.session-badge {
+  color: rgba(247, 247, 242, 0.75);
+}
+
+.camera-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  pointer-events: none;
+}
+
+.camera-copy {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  display: grid;
+  gap: 6px;
+  max-width: 420px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(10, 16, 24, 0.68);
+  backdrop-filter: blur(18px);
+}
+
+.camera-hud {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 1;
+}
+
+.camera-pill,
+.path-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(10, 16, 24, 0.68);
+  color: rgba(247, 247, 242, 0.88);
+}
+
+.path-chip {
+  width: 100%;
+  border-radius: 14px;
+  font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+  overflow-wrap: anywhere;
+}
+
+.reticle {
+  width: min(50vw, 420px);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  border: 3px solid rgba(111, 176, 255, 0.8);
+  box-shadow:
+    0 0 0 18px rgba(111, 176, 255, 0.08),
+    0 0 60px rgba(111, 176, 255, 0.18);
+}
+
+.side-panel {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.card {
+  padding: 18px;
+}
+
+.coverage-ring {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.coverage-segment {
+  padding: 12px;
+  border-radius: 14px;
+  text-transform: capitalize;
+}
+
+.coverage-0 { background: rgba(95, 216, 164, 0.22); }
+.coverage-1 { background: rgba(255, 184, 77, 0.22); }
+.coverage-2 { background: rgba(111, 176, 255, 0.22); }
+.coverage-complete { background: rgba(95, 216, 164, 0.5); }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: #ffb84d;
+}
+
+.instruction {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.meter {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.meter-value {
+  font-size: 0.86rem;
+  color: rgba(247, 247, 242, 0.64);
+}
+
+.camera-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.action-button {
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 16px;
+  font: inherit;
+  color: #f7f7f2;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.action-button.primary {
+  background: linear-gradient(135deg, #ffb84d, #5fd8a4);
+  color: #0f1319;
+  font-weight: 700;
+}
+
+.action-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.session-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(95, 216, 164, 0.12);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #5fd8a4;
+}
+
+@media (max-width: 960px) {
+  .stage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .camera-card {
+    min-height: 420px;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "director-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./main.mjs",
+  "scripts": {
+    "dev": "concurrently -k \"pnpm --filter director-web dev\" \"wait-on tcp:5173 && electron .\"",
+    "start": "electron .",
+    "build": "echo 'Desktop packaging scaffold only'",
+    "lint": "node --check main.mjs && node --check preload.mjs",
+    "test": "echo 'No desktop tests yet'",
+    "format": "prettier --check ."
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "electron": "^36.2.0",
+    "prettier": "^3.5.3",
+    "wait-on": "^8.0.3"
+  }
+}

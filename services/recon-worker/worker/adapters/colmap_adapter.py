@@ -1,0 +1,2 @@
+class ColmapAdapter:
+    backend = "colmap"

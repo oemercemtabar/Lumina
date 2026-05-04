@@ -1,0 +1,2 @@
+class FlameAdapter:
+    backend = "flame"

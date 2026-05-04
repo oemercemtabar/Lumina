@@ -1,0 +1,2 @@
+class BlenderAdapter:
+    backend = "blender"

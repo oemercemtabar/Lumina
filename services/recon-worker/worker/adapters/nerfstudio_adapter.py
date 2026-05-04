@@ -1,0 +1,2 @@
+class NerfstudioAdapter:
+    backend = "nerfstudio"
